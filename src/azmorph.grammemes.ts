@@ -1,8 +1,4 @@
 
-
-/** @namespace azmorph **/
-// data/grammemes.ts
-
 import { Settings } from "./azmorph.types";
 
 // --- Глобальные данные для морфологии ---
@@ -10,12 +6,12 @@ import { Settings } from "./azmorph.types";
 export const predictionSuffixes: string[] = new Array(3).fill('');
 export const prefixes: string[] = ['', 'по', 'наи'];
 export let suffixes: any = {}; // TODO: сюда загрузить таблицу суффиксов 
-export function setSuffixes(suffixes: any) {
-  suffixes = suffixes;
+export function setSuffixes(v: any) {
+  suffixes = v;
 }
 export let paradigms: any = [];
-export function setParadigms(paradigms: any) {
-  paradigms = paradigms;
+export function setParadigms(v: any) {
+  paradigms = v;
 }
 export function getParadigm() {
   return paradigms

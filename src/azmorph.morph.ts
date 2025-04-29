@@ -1,7 +1,5 @@
 
 
-/** @namespace azmorph **/
-
 import { AzMorphLoader } from "./azmorph";
 import { __init, initials, knownPrefixes, particles, predictionSuffixes, prefixes } from "./azmorph.constants";
 import { Dawg } from "./azmorph.dawg";
@@ -22,7 +20,7 @@ let tags: any = []; // TODO: сюда загрузить теги слов
 let probabilities: any = {}; // TODO: сюда загрузить ве  
 let words: any = {}; // TODO: сюда загрузить список слов 
 let initialized: boolean = false;
-export const Morph = (word: string, config: MorphConfig = {}): Parse[] => {
+export const Morph = (word: string, config: MorphConfig = defaults): Parse[] => {
   if (!initialized) {
     throw new Error('Please call init() before using this module.');
   }
@@ -497,7 +495,7 @@ __init.push(function () {
               stats[k][1],
               stats[k][2]);
             // Why there is even non-productive forms in suffix DAWGs?
-            if (!parse.tag.isProductive()) {
+            if (!parse.tag || !parse.tag.isProductive()) {
               continue;
             }
             if (!config.ignoreCase && parse.tag.isCapitalized() && !isCapitalized) {
@@ -581,7 +579,6 @@ export const Init = async (path: string = 'dicts'): Promise<typeof Morph> => {
     tag.ext = new Tag((tagsExtJson as string[])[i]);
     return tag;
   })
-  console.log(tags);
 
   Object.freeze(tags);
 

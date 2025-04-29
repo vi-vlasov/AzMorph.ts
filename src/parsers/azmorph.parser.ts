@@ -35,10 +35,8 @@ export class Parse {
      * @returns {Parse} Разбор, соответствующий начальной форме или False,
      *  если произвести нормализацию не удалось.
      */
-    normalize(keepPOS = false): Parse {
-        // TODO: некоторые смены частей речи, возможно, стоит делать в любом случае (т.к., например, компаративы, краткие формы причастий и прилагательных разделены, инфинитив отделен от глагола)
-        const constraint = keepPOS ? { POS: this.tag.POS } : undefined;
-        return this.inflect(constraint) as Parse;
+    normalize(keepPOS?: boolean): Parse {
+        return this.inflect(keepPOS ? { POS: this.tag.POS } : 0) as Parse;
     }
 
     /**

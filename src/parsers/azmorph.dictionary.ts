@@ -11,7 +11,7 @@ export class DictionaryParse extends Parse {
     private readonly paradigm: number[];
     private readonly formCnt: number;
     public readonly tag: Tag;
-    public score: number;
+    public score: number = 0;
     public prefix: string;
     public readonly suffix: string;
     public readonly tags: any = [];
