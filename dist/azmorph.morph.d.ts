@@ -1,4 +1,3 @@
-/** @namespace azmorph **/
 import { defaults } from "./azmorph.grammemes";
 import { Settings } from "./azmorph.types";
 import { Parse } from "./parsers/azmorph.parser";

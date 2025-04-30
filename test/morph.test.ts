@@ -1,5 +1,6 @@
 import { Init, Morph } from '../src/azmorph.morph';
 
+
 describe('Az.Morph', function () {
   beforeAll(async () => {
     await Init('dicts');
