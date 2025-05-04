@@ -1,4 +1,5 @@
 import { promises as fs } from 'fs';
+import path from 'path';
 
 interface AzMorph {
   load: (url: string, responseType: 'json' | 'arraybuffer') => Promise<Buffer | ArrayBuffer | object>;
@@ -7,7 +8,16 @@ interface AzMorph {
 
 export const AzMorphLoader: AzMorph = {
   async load(url, responseType) {
-    const data = await fs.readFile(url, { encoding: responseType === 'json' ? 'utf8' : null });
+    let data: Buffer | string;
+    try {
+      // Сначала пробуем загрузить из node_modules
+      const packagePath = require.resolve('azmorph');
+      const dictsPath = path.join(path.dirname(packagePath), 'dicts', path.basename(url));
+      data = await fs.readFile(dictsPath, { encoding: responseType === 'json' ? 'utf8' : null });
+    } catch (err) {
+      // Если не получилось, пробуем загрузить локально
+      data = await fs.readFile(url, { encoding: responseType === 'json' ? 'utf8' : null });
+    }
 
     if (responseType === 'json') {
       try {
