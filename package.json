@@ -32,6 +32,7 @@
     "dicts"
   ],
   "dependencies": {
+    "build": "^0.1.4",
     "vitest": "^3.1.2"
   }
 }

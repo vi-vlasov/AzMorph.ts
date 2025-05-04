@@ -1,10 +1,8 @@
 import { promises as fs } from 'fs';
 import path from 'path';
+import { AzMorph } from './azmorph.types';
 
-interface AzMorph {
-  load: (url: string, responseType: 'json' | 'arraybuffer') => Promise<Buffer | ArrayBuffer | object>;
-  extend: <T extends object, U extends object>(target: T, source: U) => T & U;
-}
+
 
 export const AzMorphLoader: AzMorph = {
   async load(url: string, responseType: 'json' | 'arraybuffer') {
@@ -16,6 +14,7 @@ export const AzMorphLoader: AzMorph = {
       const packageRoot = path.dirname(path.dirname(packageEntry)); // поднимаемся из dist
 
       const dictsPath = path.join(packageRoot, 'dicts', path.basename(url));
+      console.log('dictsPath', dictsPath);
       data = await fs.readFile(dictsPath, { encoding: responseType === 'json' ? 'utf8' : null });
     } catch (err) {
       // fallback на локальный путь

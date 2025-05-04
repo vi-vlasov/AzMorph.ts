@@ -2,6 +2,10 @@ import { CombinedParse } from "./parsers/azmorph.combine";
 import { DictionaryParse } from "./parsers/azmorph.dictionary";
 import { Parse } from "./parsers/azmorph.parser";
 
+export interface AzMorph {
+    load: (url: string, responseType: 'json' | 'arraybuffer') => Promise<Buffer | ArrayBuffer | object>;
+    extend: <T extends object, U extends object>(target: T, source: U) => T & U;
+}
 export interface DawgInstance {
     units: Uint32Array;
     guide: Uint8Array;
