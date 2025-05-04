@@ -602,7 +602,7 @@ export const Init = async (path: string = 'dicts'): Promise<typeof Morph> => {
   }
 
   UNKN = makeTag('UNKN', 'НЕИЗВ');
-
+  console.log('Morph initialized');
   initialized = true;
   return Morph;
 };
