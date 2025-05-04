@@ -7,22 +7,25 @@ interface AzMorph {
 }
 
 export const AzMorphLoader: AzMorph = {
-  async load(url, responseType) {
+  async load(url: string, responseType: 'json' | 'arraybuffer') {
     let data: Buffer | string;
+
     try {
-      // Сначала пробуем загрузить из node_modules
-      const packagePath = require.resolve('azmorph');
-      const dictsPath = path.join(path.dirname(packagePath), 'dicts', path.basename(url));
+      // Путь до установленного пакета (укажет на dist/azmorph.js)
+      const packageEntry = require.resolve('azmorph');
+      const packageRoot = path.dirname(path.dirname(packageEntry)); // поднимаемся из dist
+
+      const dictsPath = path.join(packageRoot, 'dicts', path.basename(url));
       data = await fs.readFile(dictsPath, { encoding: responseType === 'json' ? 'utf8' : null });
     } catch (err) {
-      // Если не получилось, пробуем загрузить локально
+      // fallback на локальный путь
       data = await fs.readFile(url, { encoding: responseType === 'json' ? 'utf8' : null });
     }
 
     if (responseType === 'json') {
       try {
         return JSON.parse(data as string);
-      } catch (err) {
+      } catch {
         throw new Error('Invalid JSON format');
       }
     }

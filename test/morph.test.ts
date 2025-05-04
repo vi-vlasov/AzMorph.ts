@@ -30,7 +30,7 @@ describe('Az.Morph', function () {
     // Проверяем что POST нормальный (например существительное или наречие)
   });
   it('score', function () {
-    const result = Morph('пивет');
+    const result = Morph('привет');
     expect(result.length).toBeGreaterThan(0);  // чтобы дальше не крашилось
     const maxScore = Math.max(...result.map(r => r.score || 0));
     console.log('maxScore', maxScore.toFixed(6));
