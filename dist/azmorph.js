@@ -1,12 +1,25 @@
 import { promises as fs } from 'fs';
+import path from 'path';
 export const AzMorphLoader = {
     async load(url, responseType) {
-        const data = await fs.readFile(url, { encoding: responseType === 'json' ? 'utf8' : null });
+        let data;
+        try {
+            // Путь до установленного пакета (укажет на dist/azmorph.js)
+            const packageEntry = require.resolve('azmorph');
+            const packageRoot = path.dirname(path.dirname(packageEntry)); // поднимаемся из dist
+            const dictsPath = path.join(packageRoot, 'dicts', path.basename(url));
+            // console.log('dictsPath', dictsPath);
+            data = await fs.readFile(dictsPath, { encoding: responseType === 'json' ? 'utf8' : null });
+        }
+        catch (err) {
+            // fallback на локальный путь
+            data = await fs.readFile(url, { encoding: responseType === 'json' ? 'utf8' : null });
+        }
         if (responseType === 'json') {
             try {
                 return JSON.parse(data);
             }
-            catch (err) {
+            catch {
                 throw new Error('Invalid JSON format');
             }
         }

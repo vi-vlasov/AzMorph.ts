@@ -489,6 +489,7 @@ export const Init = async (path = 'dicts') => {
         init();
     }
     UNKN = makeTag('UNKN', 'НЕИЗВ');
+    //console.log('Morph initialized');
     initialized = true;
     return Morph;
 };

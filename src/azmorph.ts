@@ -14,7 +14,7 @@ export const AzMorphLoader: AzMorph = {
       const packageRoot = path.dirname(path.dirname(packageEntry)); // поднимаемся из dist
 
       const dictsPath = path.join(packageRoot, 'dicts', path.basename(url));
-      console.log('dictsPath', dictsPath);
+      // console.log('dictsPath', dictsPath);
       data = await fs.readFile(dictsPath, { encoding: responseType === 'json' ? 'utf8' : null });
     } catch (err) {
       // fallback на локальный путь
