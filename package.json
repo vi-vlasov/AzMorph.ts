@@ -1,6 +1,6 @@
 {
   "name": "azmorph",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Typescript version and updated of Az.js (pymorphy2) — NLP for Russian language",
   "type": "module",
   "main": "dist/index.js",
