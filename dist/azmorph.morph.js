@@ -1,12 +1,12 @@
-import { AzMorphLoader } from "./azmorph";
-import { __init, initials, knownPrefixes, particles, predictionSuffixes, prefixes } from "./azmorph.constants";
-import { Dawg } from "./azmorph.dawg";
-import { defaults, getParadigm, grammemes, setDefaultsConfig, setParadigms, setSuffixes } from "./azmorph.grammemes";
-import { makeTag, Tag } from "./azmorph.tag";
-import { getDictionaryScore, lookup } from "./azmorph.tools";
-import { CombinedParse } from "./parsers/azmorph.combine";
-import { DictionaryParse } from "./parsers/azmorph.dictionary";
-import { Parse } from "./parsers/azmorph.parser";
+import { AzMorphLoader } from "./azmorph.js";
+import { __init, initials, knownPrefixes, particles, predictionSuffixes, prefixes } from "./azmorph.constants.js";
+import { Dawg } from "./azmorph.dawg.js";
+import { defaults, getParadigm, grammemes, setDefaultsConfig, setParadigms, setSuffixes } from "./azmorph.grammemes.js";
+import { makeTag, Tag } from "./azmorph.tag.js";
+import { getDictionaryScore, lookup } from "./azmorph.tools.js";
+import { CombinedParse } from "./parsers/azmorph.combine.js";
+import { DictionaryParse } from "./parsers/azmorph.dictionary.js";
+import { Parse } from "./parsers/azmorph.parser.js";
 let UNKN = {}; // TODO: сюда определить UNKNOWN-значение для слов
 let tags = []; // TODO: сюда загрузить теги слов 
 let probabilities = {}; // TODO: сюда загрузить ве  

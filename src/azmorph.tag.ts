@@ -1,6 +1,6 @@
-import { grammemes } from "./azmorph.grammemes";
-import { deepFreeze } from "./azmorph.tools";
-import { Parse } from "./parsers/azmorph.parser";
+import { grammemes } from "./azmorph.grammemes.js";
+import { deepFreeze } from "./azmorph.tools.js";
+import { Parse } from "./parsers/azmorph.parser.js";
 
 export class Tag {
     stat: string[];

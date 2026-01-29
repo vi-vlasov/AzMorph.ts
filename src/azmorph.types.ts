@@ -1,6 +1,6 @@
-import { CombinedParse } from "./parsers/azmorph.combine";
-import { DictionaryParse } from "./parsers/azmorph.dictionary";
-import { Parse } from "./parsers/azmorph.parser";
+import { CombinedParse } from "./parsers/azmorph.combine.js";
+import { DictionaryParse } from "./parsers/azmorph.dictionary.js";
+import { Parse } from "./parsers/azmorph.parser.js";
 
 export interface AzMorph {
     load: (url: string, responseType: 'json' | 'arraybuffer') => Promise<Buffer | ArrayBuffer | object>;

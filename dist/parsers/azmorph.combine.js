@@ -1,4 +1,4 @@
-import { Parse } from "./azmorph.parser";
+import { Parse } from "./azmorph.parser.js";
 export class CombinedParse extends Parse {
     constructor(left, right) {
         super('', right.tag);

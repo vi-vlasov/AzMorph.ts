@@ -1,5 +1,5 @@
-import { Tag } from "../azmorph.tag";
-import { Parse } from "./azmorph.parser";
+import { Tag } from "../azmorph.tag.js";
+import { Parse } from "./azmorph.parser.js";
 export declare class DictionaryParse extends Parse {
     readonly word: string;
     readonly paradigmIdx: number;

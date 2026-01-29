@@ -1,6 +1,6 @@
 import { promises as fs } from 'fs';
 import path from 'path';
-import { AzMorph } from './azmorph.types';
+import { AzMorph } from './azmorph.types.js';
 
 
 

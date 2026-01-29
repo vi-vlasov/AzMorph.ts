@@ -1,7 +1,7 @@
-import { prefixes } from "../azmorph.constants";
-import { paradigms, suffixes } from "../azmorph.grammemes";
-import { getDictionaryScore } from "../azmorph.tools";
-import { Parse } from "./azmorph.parser";
+import { prefixes } from "../azmorph.constants.js";
+import { paradigms, suffixes } from "../azmorph.grammemes.js";
+import { getDictionaryScore } from "../azmorph.tools.js";
+import { Parse } from "./azmorph.parser.js";
 export class DictionaryParse extends Parse {
     constructor(word, paradigmIdx, formIdx, stutterCnt = 0, typosCnt = 0, prefix = '', suffix = '', tags = []) {
         super(word, tags[paradigms[paradigmIdx][paradigms[paradigmIdx].length / 3 + formIdx]]);

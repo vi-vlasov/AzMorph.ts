@@ -1,5 +1,5 @@
 
-import { Settings } from "./azmorph.types";
+import { Settings } from "./azmorph.types.js";
 
 // --- Глобальные данные для морфологии ---
 

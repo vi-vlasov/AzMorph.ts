@@ -1,6 +1,6 @@
-import { Grammemes } from "../azmorph.grammemes";
-import { Tag } from "../azmorph.tag";
-import { PareserTypes } from "../azmorph.types";
+import { Grammemes } from "../azmorph.grammemes.js";
+import { Tag } from "../azmorph.tag.js";
+import { PareserTypes } from "../azmorph.types.js";
 /**
  * Один из возможных вариантов морфологического разбора.
  *

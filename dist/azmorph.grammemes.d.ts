@@ -1,4 +1,4 @@
-import { Settings } from "./azmorph.types";
+import { Settings } from "./azmorph.types.js";
 export declare const predictionSuffixes: string[];
 export declare const prefixes: string[];
 export declare let suffixes: any;

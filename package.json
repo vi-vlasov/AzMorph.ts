@@ -2,12 +2,13 @@
   "name": "azmorph",
   "version": "0.3.0",
   "description": "Typescript version and updated of Az.js (pymorphy2) — NLP for Russian language",
+  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "prepare": "tsc",
-    "test": "jest"
+    "test": "vitest run"
   },
   "keywords": [
     "NLP",

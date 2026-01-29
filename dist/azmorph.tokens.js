@@ -1,6 +1,6 @@
-import { AzMorphLoader } from "./azmorph";
-import { HTML_ENTITIES, TLDs } from "./azmorph.constants";
-import { Token } from "./azmorph.token";
+import { AzMorphLoader } from "./azmorph.js";
+import { HTML_ENTITIES, TLDs } from "./azmorph.constants.js";
+import { Token } from "./azmorph.token.js";
 /** @namespace azmorph **/
 const defaults_tokens = {
     html: false,

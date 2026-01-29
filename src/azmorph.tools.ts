@@ -1,5 +1,5 @@
-import { autoTypos } from "./azmorph.constants";
-import { DAWG } from "./azmorph.dawg";
+import { autoTypos } from "./azmorph.constants.js";
+import { DAWG } from "./azmorph.dawg.js";
 
 export function getDictionaryScore(stutterCnt: number, typosCnt: number): number {
     return Math.pow(0.3, typosCnt) * Math.pow(0.6, Math.min(stutterCnt, 1));

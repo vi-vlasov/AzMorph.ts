@@ -1,6 +1,6 @@
-import { Grammemes } from "../azmorph.grammemes";
-import { Tag } from "../azmorph.tag";
-import { Parse } from "./azmorph.parser";
+import { Grammemes } from "../azmorph.grammemes.js";
+import { Tag } from "../azmorph.tag.js";
+import { Parse } from "./azmorph.parser.js";
 
 export class CombinedParse extends Parse {
     public readonly left: Parse;

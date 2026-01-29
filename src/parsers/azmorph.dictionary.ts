@@ -1,9 +1,9 @@
 
-import { prefixes } from "../azmorph.constants";
-import { paradigms, suffixes } from "../azmorph.grammemes";
-import { Tag } from "../azmorph.tag";
-import { getDictionaryScore } from "../azmorph.tools";
-import { Parse } from "./azmorph.parser";
+import { prefixes } from "../azmorph.constants.js";
+import { paradigms, suffixes } from "../azmorph.grammemes.js";
+import { Tag } from "../azmorph.tag.js";
+import { getDictionaryScore } from "../azmorph.tools.js";
+import { Parse } from "./azmorph.parser.js";
 
 
 export class DictionaryParse extends Parse {

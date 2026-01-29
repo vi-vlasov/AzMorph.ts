@@ -1,6 +1,6 @@
-import { defaults } from "./azmorph.grammemes";
-import { Settings } from "./azmorph.types";
-import { Parse } from "./parsers/azmorph.parser";
+import { defaults } from "./azmorph.grammemes.js";
+import { Settings } from "./azmorph.types.js";
+import { Parse } from "./parsers/azmorph.parser.js";
 type MorphConfig = Partial<typeof defaults>;
 export declare const Morph: {
     (word: string, config?: MorphConfig): Parse[];

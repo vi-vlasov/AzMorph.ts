@@ -1,5 +1,5 @@
-import { Token } from "./azmorph.token";
-import { TokenConfig } from "./azmorph.types";
+import { Token } from "./azmorph.token.js";
+import { TokenConfig } from "./azmorph.types.js";
 declare class Tokens {
     private text;
     private config?;

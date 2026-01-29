@@ -1,4 +1,4 @@
-import { AzMorphLoader } from "./azmorph";
+import { AzMorphLoader } from "./azmorph.js";
 const ROOT = 0;
 const MISSING = -1;
 const PRECISION_MASK = 0xFFFFFFFF;

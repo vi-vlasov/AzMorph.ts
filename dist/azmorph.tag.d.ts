@@ -1,4 +1,4 @@
-import { Parse } from "./parsers/azmorph.parser";
+import { Parse } from "./parsers/azmorph.parser.js";
 export declare class Tag {
     str: string;
     stat: string[];
